@@ -1,12 +1,11 @@
-export function getInfos (resp) {
+export function getInfos(json) {
     const rua = document.getElementById('rua');
     const estado = document.getElementById('estado');
     const regiao = document.getElementById('regiao');
     const ddd = document.getElementById('ddd');
 
-    if (!resp) return;
-    rua.innerHTML = resp.logradouro;
-    estado.innerHTML = resp.uf;
-    regiao.innerHTML = resp.regiao;
-    ddd.innerHTML = resp.ddd;   
+    rua.innerHTML = json.logradouro;
+    estado.innerHTML = json.estado;
+    regiao.innerHTML = json.regiao;
+    ddd.innerHTML = json.ddd;
 }

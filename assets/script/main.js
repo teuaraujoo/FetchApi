@@ -1,13 +1,14 @@
-import { getCep } from './modules/getCep.js';
-import { getInfos } from './modules/getInfos.js';
+import { getCep } from "./modules/getCep.js";
+import { homeGsap } from "./modules/animations/homeGsap.js";
 
-const btn = document.querySelector('button');
-const form = document.querySelector('form');
-
-btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (getCep()) {
-        form.send();
-        getInfos();
-    }
+document.addEventListener("DOMContentLoaded", () => {
+    homeGsap();
 });
+
+const btn = document.getElementById('btn-cep');
+const inputCep = document.getElementById('input-cep');
+
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    getCep(inputCep);
+})
